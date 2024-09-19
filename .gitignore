@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 PlatformerSPD/Library/AnnotationManager
 /PlatformerSPD/Library
+/PlatformerSPD/Logs
