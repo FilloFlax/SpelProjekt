@@ -67,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.LeftShift) && CheckIfGrounded() == true && moveSpeed < maxSpeed && (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Horizontal") < 0))
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && CheckIfGrounded() == true && moveSpeed < maxSpeed && (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Horizontal") < 0))
         {
             moveSpeed = moveSpeed + accSpeed * Time.deltaTime;
         }
