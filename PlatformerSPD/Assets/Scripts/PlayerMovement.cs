@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 1f;
-    [SerializeField] private float jumpForce = 300f;
+    [SerializeField] private float moveSpeed = 250f;
+    [SerializeField] private float minSpeed = 250f;
+    [SerializeField] private float maxSpeed = 500f;
+    [SerializeField] private float accSpeed = 500f;
+    [SerializeField] private float jumpForce = 750f;
     [SerializeField] private Transform leftFoot, rightFoot;
     [SerializeField] private Transform spawnPosition;
     [SerializeField] private LayerMask whatIsGround;
@@ -59,6 +64,23 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
+
+
+        if ((Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) && CheckIfGrounded() == true && moveSpeed < maxSpeed && (Input.GetAxisRaw("Horizontal") > 0 || Input.GetAxisRaw("Horizontal") < 0))
+        {
+            moveSpeed = moveSpeed + accSpeed * Time.deltaTime;
+        }
+
+        else 
+        {
+            if (moveSpeed > minSpeed && CheckIfGrounded())
+            {
+                moveSpeed = moveSpeed - accSpeed * Time.deltaTime;
+            }
+            
+        }
+
 
         anim.SetFloat("MoveSpeed", Mathf.Abs(rigidbd.velocity.x));
         anim.SetFloat("VerticalSpeed", rigidbd.velocity.y);
