@@ -25,6 +25,5 @@ public class MenuController : MonoBehaviour
     public void CloseCredits()
     {
         creditsPanel.SetActive(false);
-        print("Hello");
     }
 }
