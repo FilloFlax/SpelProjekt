@@ -31,4 +31,9 @@ public class QuestGiver : MonoBehaviour
         SceneManager.LoadScene(4);
     }
 
+    public void LoadLevelThree()
+    {
+        SceneManager.LoadScene(1);
+    }
+
 }
