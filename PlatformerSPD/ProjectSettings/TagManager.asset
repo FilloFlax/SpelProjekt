@@ -9,10 +9,6 @@ TagManager:
   - Enemy
   - Banana
   - Health
-  - IntroPlayerText
-  - IntroQuestTextOne
-  - IntroQuestTextTwo
-  - IntroQuestTextThree
   layers:
   - Default
   - TransparentFX
