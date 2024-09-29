@@ -49,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         horizontalValue = Input.GetAxis("Horizontal");
+
         if (horizontalValue < 0)
         {
             FlipSprite(true);
