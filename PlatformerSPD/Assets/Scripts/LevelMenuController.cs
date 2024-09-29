@@ -9,50 +9,55 @@ public class LevelMenuController : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
-   public void LoadLevelOne()
-    {
-        SceneManager.LoadScene(2);
+    public void IntroScene() 
+    { 
+        SceneManager.LoadScene(2); 
     }
-
+    public void LoadQuestLevel()
+    {
+        SceneManager.LoadScene(5);
+    }
+    public void LoadLevelOne()
+    {
+        SceneManager.LoadScene(3);
+    }
+    // TODO Connect to the right scene when created
     public void LoadLevelTwo()
      { 
-        SceneManager.LoadScene(3); 
+        SceneManager.LoadScene(4); 
      }
 
     public void LoadLevelThree()
     {
-        SceneManager.LoadScene(4);
+       // SceneManager.LoadScene(5);
     }
 
     public void LoadLevelFour()
     {
-        SceneManager.LoadScene(5);
+       // SceneManager.LoadScene(6);
     }
     public void LoadLevelFive()
     {
-        SceneManager.LoadScene(6);
+       // SceneManager.LoadScene(7);
     }
     
     public void LoadLevelSix()
     {
-        SceneManager.LoadScene(7);
+        //SceneManager.LoadScene(8);
     }
     public void LoadLevelSeven()
     {
-        SceneManager.LoadScene(8);
+       // SceneManager.LoadScene(9);
     }
     public void LoadLevelEight()
     {
-        SceneManager.LoadScene(9);
+       // SceneManager.LoadScene(10);
     }
     public void LoadLevelNine()
     {
-        SceneManager.LoadScene(10);
+       // SceneManager.LoadScene(11);
     }
-    public void LoadQuestLevel()
-    {
-        SceneManager.LoadScene(11);
-    }
+
 
 
 
