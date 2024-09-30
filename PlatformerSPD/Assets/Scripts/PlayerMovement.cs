@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform leftFoot, rightFoot;
     [SerializeField] private Transform spawnPosition;
     [SerializeField] private LayerMask whatIsGround;
-    [SerializeField] private AudioClip hitSound, jumpSound, pickupSound;
 
     [SerializeField] private int startingHealth = 5;
     [SerializeField] private Slider healthSlider;
@@ -34,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rigidbd;
     private SpriteRenderer rend;
     private Animator anim;
-    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +43,6 @@ public class PlayerMovement : MonoBehaviour
         rigidbd = GetComponent<Rigidbody2D>();
         rend = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -104,7 +101,6 @@ public class PlayerMovement : MonoBehaviour
     {
         if(other.CompareTag("Banana")) 
         {
-            audioSource.PlayOneShot(pickupSound, 0.5f);
             Destroy(other.gameObject);
             bananasCollected++;
             bananaText.text = "" + bananasCollected;
@@ -123,13 +119,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        audioSource.PlayOneShot(jumpSound, 0.5f);
         rigidbd.AddForce(new Vector2(0, jumpForce));
     }
 
     public void TakeDamage(int damageAmount)
     {
-        audioSource.PlayOneShot(hitSound, 0.5f);
         currentHealth -= damageAmount;
         UpdateHealthBar();
 
