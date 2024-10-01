@@ -11,7 +11,7 @@ public class QuestLevelController : MonoBehaviour
     }
     public void LoadQuestLevelOne()
     {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(6);
     }
 
   // TODO add connection to scenes when they are created
