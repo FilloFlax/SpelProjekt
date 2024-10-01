@@ -5,7 +5,7 @@ using UnityEngine;
 public class QuestChecker : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox, finishedText, unfinishedText;
-    [SerializeField] private int questGoal = 10;
+    [SerializeField] private int questGoal = 0;
 
     private Animator anim;
 
