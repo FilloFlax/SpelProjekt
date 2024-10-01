@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private float rayDistance = 0.25f;
     private int currentHealth = 0;
     public int bananasCollected = 0;
+    public int achivementLevel1 = 0;
 
     private Rigidbody2D rigidbd;
     private SpriteRenderer rend;
@@ -105,6 +107,11 @@ public class PlayerMovement : MonoBehaviour
             Destroy(other.gameObject);
             bananasCollected++;
             bananaText.text = "" + bananasCollected;
+
+            if (bananasCollected >= 3) 
+            {
+                achivementLevel1 += 1;
+            }
         }
 
         if (other.CompareTag("Health"))
