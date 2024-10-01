@@ -130,8 +130,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        audioSource.PlayOneShot(jumpSound, 0.5f);
         rigidbd.AddForce(new Vector2(0, jumpForce));
+        audioSource.PlayOneShot(jumpSound, 0.5f);
     }
 
     public void TakeDamage(int damageAmount)
